@@ -1,0 +1,585 @@
+/*****************  rtportal-ui  *******************/
+.rtportal{
+    height:100%;
+}
+
+
+/*********************  rt-header  ********************/
+.rt-header{
+    background-color:#ffffff;
+    margin-top:10px;
+    height:36px;
+    line-height: 36px;
+}
+
+.rt-header h2{
+    font-size:14px;
+    font-weight: bold;
+    display: inline;
+    color:#555;
+    border-left:2px solid #1fb6d8;
+    padding-left:20px;
+}
+
+.rt-header .rt-toolbar{
+    float: right;
+    margin-right: 20px;
+}
+
+/*********************  rt-toolbar  ********************/
+.rt-toolbar button{
+    color: #555;
+}
+
+.rt-toolbar .el-button+.el-button{
+    margin-left:15px;
+}
+
+.rt-toolbar .rt-divider{
+    width:1px;
+    background-color: #ccc;
+    display: inline-block;
+    height:14px;
+    margin: 0 15px;
+}
+
+.rt-toolbar .el-dropdown{
+    font-size: 14px;
+    margin-left: 15px;
+    color: #555;
+}
+
+.rt-toolbar .el-dropdown:hover
+{
+    cursor: pointer;
+    color: #1fb6d8;
+}
+
+.rt-toolbar__dropdown{
+    font-size: 14px;
+    color: #555; 
+}
+
+/*********************  rt-query  ********************/
+.rt-query{
+    margin-top:10px;
+    padding:20px;
+    background-color: #ffffff;
+}
+
+.rt-query .el-form--inline .el-form-item{
+    margin-bottom: 0;
+    color: #555;
+}
+
+.rt-query .rt-query__reset{
+    background-color:#ccc;
+    border-color: #ccc;
+}
+
+.rt-query .rt-query__reset:hover{
+    background-color: #ddd;
+    border-color: #ddd;
+}
+
+.rt-query .rt-query__reset:focus{
+    background-color: #ddd;
+    border-color: #ddd;
+}
+
+.rt-query .el-select{
+    width:100%;
+}
+
+.rt-query .el-date-editor.el-input{
+    width: 100%;
+}
+
+.rt-query .rt-query__container{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+}
+
+.rt-query .rt-query__container .el-form{
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.rt-query .rt-query__collapse{
+    margin-left:20px;
+}
+
+.rt-query .rt-query__collapse .el-button{
+    padding: 3px 6px 0;
+    color:#ccc;
+    height:26px;
+}
+
+/*********************  rt-grid  ********************/
+.rt-grid{
+    margin-top:10px;
+    background-color: #ffffff;
+}
+
+.rt-grid .rt-grid__header{
+    padding: 5px 20px;
+    border-bottom: 1px solid #ccc;
+    height: 34px;
+}
+
+.rt-grid .rt-grid__header .rt-toolbar{
+    display: inline-block;
+}
+
+.rt-grid .rt-grid__moresearch{
+    padding: 15px 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.rt-grid .rt-grid__moresearch .el-select{
+    width:100%;
+}
+
+.rt-grid .rt-grid__moresearch .el-date-editor.el-input{
+    width: 100%;
+}
+
+.rt-grid .rt-query__reset{
+    background-color:#ccc;
+    border-color: #ccc;
+}
+
+.rt-grid .rt-query__reset:hover{
+    background-color: #ddd;
+    border-color: #ddd;
+}
+
+.rt-grid .rt-grid__body{
+    padding: 20px 20px 0 20px;
+}
+
+.rt-grid .rt-grid__footer{
+    padding: 0 20px 20px;
+    background-color: #ffffff;
+}
+
+
+.rt-grid .rt-query__reset:focus{
+    background-color: #ddd;
+    border-color: #ddd;
+}
+
+.rtportal .el-table{
+    border: 0;
+}
+
+.rtportal .el-table::before{
+    height: 0;
+}
+
+.rtportal .el-table::after{
+    height: 0;
+}
+
+.rtportal .el-table th{
+	font-weight: normal;
+    background-color: #f5f5f5;
+    
+}
+
+.rtportal .el-table th.is-leaf{
+    border:0;
+    color: #555;
+}
+.rtportal .el-table td{
+    border:0;
+    color: #888;
+}
+.rtportal .el-table__header-wrapper thead div, .el-table__footer-wrapper thead div{
+    background-color: #f5f5f5;
+    color:#888;
+}
+
+.rtportal .el-table__empty-block {
+    height:auto !important;
+}
+
+.rtportal .el-pagination {
+    padding: 10px 15px !important;
+    background-color: #f5f5f5;
+}
+
+.rtportal .el-input-group__append, .el-input-group__prepend{
+    padding: 0;
+}
+
+.rtportal .el-table .el-loading-mask{
+    z-index: 2000;
+}
+
+/*********************  rt-section  ********************/
+.rt-section{
+    
+}
+
+.rt-section+.rt-section{
+    margin-top: 10px;
+}
+
+.rt-section .rt-toolbar{
+    float:right;
+}
+
+.rt-section .el-button--text{
+    color: #555;
+}
+
+.rt-section .rt-section__header{
+    height: 35px;
+    line-height: 35px;
+    color: #555;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.rt-section .rt-section__content
+{
+    border-top: 1px solid #ccc;
+    padding-top:10px;
+}
+
+.rt-section__header__arrow{
+    transition: transform .3s
+}
+
+.rt-section.is-collapsed>.rt-section__header .rt-section__header__arrow{
+    transform: rotate(-90deg);
+}
+
+/*****************  rt-content  *******************/
+.rt-content{
+    margin-top:10px;
+}
+
+.rt-content .rt-content__side{
+    background-color: #ffffff;
+    width: 130px;
+    padding: 20px;
+
+    position: absolute;
+    bottom: 50px;
+    top: 56px;
+    left: 50px;
+}
+
+.rt-content .rt-content__main{
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.rt-content.with-side .rt-content__main{
+    overflow-x: hidden;
+    overflow-y: visible;
+    position: absolute;
+    bottom: 50px;
+    top: 56px;
+    right: 50px;
+    left: 230px;
+}
+
+.rt-content.with-side .rt-content__main::-webkit-scrollbar{
+    display: none;
+}
+
+/*****************  rt-side  *******************/
+/* .with-side{
+    position:relative;
+} */
+
+
+/*****************  rt-nav  *******************/
+.rt-nav{
+
+}
+
+.rt-nav .rt-nav-item{
+    font-size: 14px;
+    height: 35px;
+    line-height: 35px;
+}
+
+.rt-nav .rt-nav-item:not(.is-disabled){
+    color: #555;
+    cursor: pointer;
+}
+
+.rt-nav .rt-nav-item.is-active{
+    color: #1fb6d8;
+    font-weight: bold;
+}
+
+.rt-nav .rt-nav-item.is-disabled{
+    color:#888;
+}
+
+.rt-nav .rt-nav-item:not(.is-disabled):hover{
+    color: #1fb6d8;
+    text-decoration: underline;
+}
+
+.rt-nav-item + .rt-nav-item{
+    margin-top:10px;
+}
+
+/*****************  element-ui  button  *******************/
+.rtportal .el-button--primary,.rtportal .el-button--default
+{
+    padding:5px 18px
+}
+
+/*****************  element-ui  form  *******************/
+.rtportal .el-form-item__label{
+    padding-top:8px;
+    padding-bottom: 8px;
+    color: #555;
+}
+
+
+.rtportal .el-form--label-left .el-form-item.is-required>.el-form-item__label:before{
+    display:none;
+}
+
+ .rtportal .el-form--label-left .el-form-item.is-required>.el-form-item__label:after{
+    content: ' *';
+    color: #ff4949;
+    margin-right: 4px;
+}
+
+
+.rtportal .el-form-item{
+    margin-bottom: 10px;
+}
+
+.rtportal .el-form-item__error{
+    /*top:28px;*/
+    display: none;
+}
+
+.rtportal .el-form-item .el-select{
+    width:100%;
+}
+
+/*****************  element-ui input *******************/
+.rtportal .el-input__inner {
+    height: 26px;
+    color:#555;
+}
+
+.el-date-table td{
+    line-height: 32px;
+}
+
+
+/*******************  rt-excel-import  *********************/
+.rt-excel-import .el-upload-dragger{
+    height: 120px;
+}
+
+.rt-excel-import .rt-excel-import_tip{
+    color: #888;
+    font-size:12px;
+    margin-bottom: 5px;
+}
+
+.rt-excel-import .el-upload-dragger .el-icon-upload{
+    margin:16px 0;
+}
+
+.rt-excel-import .rt-excel-import__result{
+    border:1px dashed #d9d9d9;
+    width: 340px;
+    height: 120px;
+    overflow: auto;
+    padding: 10px;
+    font-size: 13px;
+    margin-top:15px;
+    line-height: 16px;
+}
+
+.rt-excel-import .rt-excel-import__result_error{
+    color: red;
+}
+
+.rt-excel-import .rt-excel-import__result_success{
+    color: blue;
+}
+
+
+
+.rt-dropdown-menu{
+    font-size: 14px;
+    color: #555;
+}
+
+
+
+
+
+
+
+
+
+hr.separator{
+    height: 0;
+    border: 0;
+    border-top: 1px solid #dddddd;
+}
+
+/*列表及表单标题*/
+.rt-portal-title {
+    font-size: 150%;
+}
+
+/*选择器控件*/
+.rt-portal-item-select {
+    width: 100%;
+}
+
+/*日期控件*/
+.rt-portal-item-date {
+    width: 100% !important;
+}
+
+/*内容页面*/
+.rt-portal-main-container {
+    padding-bottom: 120px;
+    display: inline-block;
+    width: 100%;
+}
+
+/*列表顶部标题*/
+.rt-portal-list-head {
+    height: 60px;
+    line-height: 80px;
+}
+
+
+/*列表界面整体*/
+.rt-portal-data {
+    margin-top:10px;
+}
+
+
+/*列表查询部分-行*/
+.rt-portal-list-search-row {
+    padding: 10px 0;
+}
+
+.rt-portal-list-search-row+.rt-portal-list-search-row {
+    padding-top: 0px;
+}
+
+
+/*列表查询部分-项*/
+.rt-portal-list-item-content {
+    min-height: 30px;
+    line-height: 30px;
+    padding-right: 50px;
+}
+
+.rt-portal-list-item-content span {
+    font-family: 'Microsoft YaHei';
+    font-size: 14px;
+}
+
+
+/*列表按钮*/
+.rt-portal-list-command {
+    float: right;
+}
+
+
+/*单据表单页面*/
+
+.rt-portal-form {
+    position: relative;
+}
+
+
+/*单据表单tab*/
+.rt-portal-form-tabs {
+    padding-top: 10px;
+}
+
+
+/*详情页标题*/
+.rt-portal-form-title {
+    line-height: 70px;
+    height: 50px;
+}
+
+
+/*详情页行*/
+.rt-portal-form-row {
+    /*margin-top: 20px;*/
+}
+
+.rt-portal-form-row+.rt-portal-form-row {
+    /*margin-top: 0;*/
+}
+
+
+/*详情及明细页按钮*/
+.rt-portal-form-command {
+    right:0;
+    top:12px;
+    position: absolute;
+}
+
+.rt-portal-form-button {
+    margin-top: 10px !important;
+}
+
+.rt-portal-form-button+.rt-portal-form-button {
+    margin-left: -10px;
+}
+
+/*审批提交*/
+.rt-portal-flowSubmitDialog .el-dialog--small{
+ max-width: 450px !important;
+}
+/*审批记录*/
+.rt-portal-flowListDialog .el-dialog--small{
+ max-width: 650px !important;
+}
+
+.rt-home-table-header{
+    background-color: #ffffff;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.rt-home-table-header h2{
+    font-size:14px;
+    font-weight: 900;
+    display: inline;
+    color:#555;
+    border-left:2px solid #1fb6d8;
+    padding-left:20px;
+}
+
+.rt-home-table-header .rt-toolbar{
+    float: right;
+    margin-right: 20px;
+}
