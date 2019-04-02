@@ -66,6 +66,7 @@
         console.log("start")
         console.log(result.result);
        console.log(JSON.stringify(result.result));
+
        this.leftMenus=result.result;
 
       },

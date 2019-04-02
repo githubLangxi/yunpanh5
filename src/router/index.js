@@ -69,12 +69,12 @@ const router = new VueRouter({
     },
     {
         path: '/',
-        redirect: { name: 'home' },
+        redirect: { name: 'filemain' },
         meta: { keepAlive: true },
         component: Main,
         children: [{
-            path: 'home',
-            name: 'home',
+            path: 'filemain',
+            name: 'filemain',
             meta: { keepAlive: true },
             component: Home
         }]
@@ -86,7 +86,7 @@ const router = new VueRouter({
 
 //注册一个全局的 before 钩子，对于需要登录才能访问的模块进行控制
 router.beforeEach((to, from, next) => {
-    if (to.name === "login" || to.name === "auth" || to.name === "people" || to.name==="peoplelist" ||  to.name==="filemain" || to.name === "401" ||  to.name === "test" || to.name === "404" || to.name === "500") {
+    if ( to.name === "people" || to.name==="peoplelist" ||  to.name==="filemain" || to.name === "401" ||  to.name === "test" || to.name === "404" || to.name === "500") {
         next();
         return;
     }
@@ -104,11 +104,11 @@ function guardRoute(to, from, next) {
     if (!auth.isLoggedIn) {
         if (to.name === 'home') {
             next({
-                name: 'login'
+                name: 'filemain'
             });
         } else {
             next({
-                name: 'login',
+                name: 'filemain',
                 query: { redirect: to.fullPath }
             });
         }

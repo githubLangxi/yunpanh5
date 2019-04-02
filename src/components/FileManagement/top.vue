@@ -13,8 +13,9 @@
     <el-upload
       class="upload-demo"
       ref="upload"
-      action="http://localhost:8057/docment/postsfile"
+      :action="path"
       :on-preview="handlePreview"
+      :on-success="handleAvatarSuccess"
       :on-remove="handleRemove"
       :file-list="fileList"
       :auto-upload="false">
@@ -39,6 +40,7 @@
   </el-dialog>
 
 
+
 </div>
 
 </template>
@@ -46,9 +48,11 @@
 <script>
 
   export default{
+
     data(){
       return{
-        fileList: [{name: 'food.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}, {name: 'food2.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}],
+        path:null,
+        fileList: [],
         dialogFormVisible: false,
         dialoguploadVisible:false,
         form: {
@@ -68,12 +72,28 @@
     components:{
 
     },
+    mounted:  function() {
+         this.path="http://localhost:8057/docment/postsfile?id="+this.$cookies.get("menuid")
+    },
     created(){
       console.log('数据信息')
     },
     methods:{
-      submitUpload() {
+      handleAvatarSuccess(c,b){
+       // alert(c);
+        //alert(b);
+        console.log(c);
+        console.log(b);
+        // alert(this.$store.state.menu.id);
+      },
+     async  submitUpload() {
+        this.path="http://localhost:8057/docment/postsfile?id="+this.$cookies.get("menuid")
+        await this.$set(this, 'path', "http://localhost:8057/docment/postsfile?id="+this.$cookies.get("menuid"));
+        // alert("http://localhost:8057/docment/postsfile?id="+this.$cookies.get("menuid"));
+        // alert(this.path);
         this.$refs.upload.submit();
+
+       this.$router.go(0)
       },
       handleRemove(file, fileList) {
         console.log(file, fileList);
@@ -85,7 +105,7 @@
         console.log(a);
         this.dialogFormVisible = false
         //this.open5();
-        alert(this.form.name);
+        // alert(this.form.name);
         let menusave ={
           "menusave": {"entity": {"parentMenuId":"0000a0000a0000a0000a0000", "icon": "el-icon-message\r\n", "alias":this.form.name, "state": "ENABLE", "name":this.form.name}},
           "parentid":"0000a0000a0000a0000a0000",
@@ -101,17 +121,17 @@
               rt.showErrorToast(res);
             });
         });
-       location.reload();
+
       },
      async  createchilddir(a){
         console.log(a);
         this.dialogFormVisible = false
         //this.open5();
-        alert(this.form.name);
-        alert(this.$store.state.menu.id);
+        // alert(this.form.name);
+        // alert(this.$store.state.menu.id);
         let menusave ={
-          "menusave": {"entity": {"parentMenuId":this.$store.state.menu.id, "icon": "el-icon-message\r\n", "alias":this.form.name, "state": "ENABLE", "name":this.form.name}},
-          "parentid":this.$store.state.menu.id,
+          "menusave": {"entity": {"parentMenuId":this.$cookies.get("menuid"), "icon": "el-icon-message\r\n", "alias":this.form.name, "state": "ENABLE", "name":this.form.name}},
+          "parentid":this.$cookies.get("menuid"),
           "tag":1
         }
         let result= await new Promise(async (resolve, reject) => {

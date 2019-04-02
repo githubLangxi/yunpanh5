@@ -3,8 +3,8 @@
     <Servicesiderbar  class="sidebar float"></Servicesiderbar >
     <!--<ServiceuploadDrag></ServiceuploadDrag>-->
     <div class="main float" >
-      <div class="top" ><Servicetop></Servicetop></div>
-
+      <div class="top"  ><Servicetop v-bind:peopleitems="peopleitems" v-on:peoplechanged="peoplechange($event)"></Servicetop></div>
+      <Servicepeoplelist  v-bind:peopleitems="peopleitems" class="peopleitems" ></Servicepeoplelist>
     </div>
   </div>
 </template>
@@ -19,7 +19,8 @@ import Servicetop from './ptop'
   export default {
     data () {
       return {
-        isLogin:false
+        isLogin:false,
+        peopleitems:[]
       }
     },
     components: {
@@ -30,15 +31,49 @@ import Servicetop from './ptop'
         // 'Serviceuploaddrop':Serviceuploaddrop
 
     },
-    mounted: function() {
+    mounted:async  function() {
+     await  this._fetchRecords();
       if(this.$store.state.auth.isLoggedIn){
         this.isLogin = true
       }
     },
+    watch: {
+      '$route' (to, from) {
+        console.log("watch")
+        this._fetchRecords();
+        // console.log(this.getStatus(this.$route.path))
+      }
+    },
     methods: {
+      peoplechange(event){
+        debugger;
+        this._fetchRecords();
+      },
+      async _fetchRecords(){ debugger;
+        console.log(this.$cookies.get("menuid"));
+        let result= await new Promise(async (resolve, reject) => {
+          await    rt
+          //.get("http://localhost:8057/docment/queryfile?_id="+this.$store.state.menu.id)
+            .get("http://localhost:8057/peoples/querypeople?_id="+this.$cookies.get("menuid"))
+
+            .then(res => {
+              resolve(res)
+            })
+            .catch(res => {
+              rt.showErrorToast(res);
+            });
+        });
+
+        console.log("查询文件")
+
+        console.log(JSON.stringify(result.result.people));
+
+  this.peopleitems = result.result.people;
+
+
+      },
       gg(){
-        alert(1)
-        alert(this.$store.state.menu.id);
+
       },
       backToHome () {
         this.$router.push('/home')
@@ -48,6 +83,9 @@ import Servicetop from './ptop'
 </script>
 
 <style scoped>
+  .peopleitems{
+    margin-left:50px;
+  }
   .maincontent{
     margin-top:20px;
     margin-left:20px;

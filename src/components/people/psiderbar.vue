@@ -1,8 +1,8 @@
 <template>
-  <!--左侧菜单组件-->
-  <el-menu default-active="0" class="el-menu-vertical-demo" onclick="kk" @select="menuSelected"
-           background-color="#F0F6F6"
-           text-color="#3C3F41"
+  <!--&lt;!&ndash;左侧菜单组件&ndash;&gt;  text-color="#3C3F41"  background-color="#F0F6F6"-->
+  <el-menu default-active="0" class="el-menu-vertical-demo" @select="handleSelect" @open="open"
+           background-color="#ffaaaa"
+           text-color="#ffaaaa"
            active-text-color="black">
     <nav-menu :navMenus="leftMenus"></nav-menu>
   </el-menu>
@@ -49,6 +49,13 @@
       console.log('数据信息',this.leftMenus)
     },
     methods:{
+      handleSelect(index,indexPath){
+        debugger;
+        alert(index);
+        alert(indexPath);
+        console.log('当前绑定的index值',index)
+        console.log('当前绑定的index与path值',indexPath)
+      },
       async _fetchRecords(){
         let result= await new Promise(async (resolve, reject) => {
           await    rt
@@ -66,15 +73,11 @@
         this.leftMenus=result.result;
 
       },
-      kk(){
-        alert(1);
-      },
-      menuSelected(index,indexPath){
+open(index){
+        debugger;
         alert(index);
-        alert(indexPath);
-        console.log('当前绑定的index值',index)
-        console.log('当前绑定的index与path值',indexPath)
-      }
+
+}
     }
   }
 </script>

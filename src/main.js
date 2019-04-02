@@ -17,13 +17,18 @@ import ggg from 'vue-seamless-scroll'
 Vue.use(scroll,{componetName:'scroll-seamless'})
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 Vue.use(VueAwesomeSwiper)
-
+import rightMenu from "rightMenu";
+Vue.use(rightMenu);
 // 引用element-ui
 import '../theme/index.css';
+// import "../theme/menu.css";
 
 /* Network plugin */
 import axios from 'axios';
 Vue.prototype.$http = Vue.http = axios;
+
+import VueCookies from 'vue-cookies'
+Vue.use(VueCookies)
 
 /* echart */
 import echarts from 'echarts'
@@ -114,9 +119,11 @@ Vue.use(BaiduMap, {
 //表格的时间时区处理
 Vue.prototype.DateFormatter = function(row, attribute, isDate) {
     if (row[attribute]) {
-        if (row[attribute].indexOf("-") != -1) {
-            row[attribute] = row[attribute].replace(new RegExp(/-/gm), "/");
-        }
+        // if (row[attribute].indexOf("-") != -1) {
+        //     row[attribute] = row[attribute].replace(new RegExp(/-/gm), "/");
+        // }
+        console.log(typeof row[attribute])
+      console.log( row[attribute])
         return new Date(row[attribute]).getZoneTime(isDate);
     }
 }
